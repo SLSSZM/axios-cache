@@ -22,19 +22,9 @@ export class CacheManager {
    */
   public getCacheKey(config: AxiosRequestConfig): string {
     if (config.params) {
-      return [
-        config.method,
-        config.url,
-        ...Object.keys(config.params),
-        ...Object.values(config.data),
-      ].join('&');
+      return [config.method, config.url, ...Object.keys(config.params)].join('&');
     } else if (config.data) {
-      return [
-        config.method,
-        config.url,
-        ...Object.keys(config.data),
-        ...Object.values(config.data),
-      ].join('&');
+      return [config.method, config.url, ...Object.keys(config.data)].join('&');
     }
     return [config.method, config.url].join('&');
   }
