@@ -98,34 +98,34 @@ export class HttpRequest {
   public get<T = any>(
     url: string,
     config?: RequestOptions
-  ): Promise<ResponseResult<T> | AxiosResponse<ResponseResult<T>>> {
+  ): Promise<ResponseResult<T>> {
     return this.request<T>({ ...config, url, method: 'get' });
   }
   public post<T = any>(
     url: string,
     data?: any,
     config?: RequestOptions
-  ): Promise<ResponseResult<T> | AxiosResponse<ResponseResult<T>>> {
+  ): Promise<ResponseResult<T>> {
     return this.request<T>({ ...config, url, data, method: 'post' });
   }
   public put<T = any>(
     url: string,
     data?: any,
     config?: RequestOptions
-  ): Promise<ResponseResult<T> | AxiosResponse<ResponseResult<T>>> {
+  ): Promise<ResponseResult<T>> {
     return this.request<T>({ ...config, url, data, method: 'put' });
   }
   public delete<T = any>(
     url: string,
     config?: RequestOptions
-  ): Promise<ResponseResult<T> | AxiosResponse<ResponseResult<T>>> {
+  ): Promise<ResponseResult<T>> {
     return this.request<T>({ ...config, url, method: 'delete' });
   }
   public upload<T = any>(
     url: string,
     data?: any,
     config?: RequestOptions
-  ): Promise<ResponseResult<T> | AxiosResponse<ResponseResult<T>>> {
+  ): Promise<ResponseResult<T>> {
     return this.request<T>({
       ...config,
       url,
